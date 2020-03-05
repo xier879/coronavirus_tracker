@@ -1,6 +1,6 @@
-﻿"Country,Other",Total Cases ,New Cases,Total Deaths,New Deaths,Active Cases,Total Recovered ,"Serious, Critical"
+"Country,Other",Total Cases ,New Cases,Total Deaths,New Deaths,Active Cases,Total Recovered ,"Serious, Critical"
 China,"80,282",131,"2,981",38,"27,298","50,003","6,416"
-S. Korea,"5,621",435,35,3,"5,545",41,27
+South Korea,"5,621",435,35,3,"5,545",41,27
 Italy,"3,089",587,107,28,"2,706",276,295
 Iran,"2,922",586,92,15,"2,278",552,
 Diamond Princess,706,,6,,488,212,35
@@ -8,11 +8,11 @@ Japan,331,38,6,,282,43,29
 France,285,73,4,,269,12,10
 Germany,262,59,,,246,16,2
 Spain,222,57,2,1,218,2,3
-USA,149,25,11,2,129,9,8
+United States,149,25,11,2,129,9,8
 Singapore,110,,,,32,78,7
 Hong Kong,103,2,2,,64,37,6
 Switzerland,90,32,,,87,3,
-U.K.,85,34,,,77,8,
+United Kingdom,85,34,,,77,8,
 Kuwait,56,,,,56,,
 Norway,56,23,,,56,,
 Bahrain,52,3,,,51,1,
@@ -26,7 +26,7 @@ Iraq,35,3,,,35,,
 Canada,33,3,,,26,7,
 Austria,29,5,,,29,,
 India,28,21,,,25,3,
-U.A.E.,27,,,,22,5,2
+United Arab Emirates,27,,,,22,5,2
 Iceland,26,12,,,25,1,
 Belgium,23,8,,,22,1,1
 San Marino,16,6,1,,15,,3
