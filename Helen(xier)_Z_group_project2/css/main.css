@@ -1,7 +1,7 @@
 body {
     background-color: #fff;
   }
-<<<<<<< HEAD:Helen(xier)_Z_group_project2/assets/css/main.css
+
 #header{
   font-family: 'Times New Roman', Times, serif;
   padding-top: 0px;
@@ -50,7 +50,6 @@ body {
 
 }
 .footer {
-  font-family: 'Times New Roman', Times, serif;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -59,14 +58,21 @@ body {
   border-top-style: solid; 
   border-top-width: 4px; 
   border-top-color: teal;
-  background-color: rgba(20, 20, 20, 0.301);
+  background-color: rgba(7, 7, 7, 0.342);
   padding-top: 5px;
   color: white;
-=======
+  text-align: center;
+}
+.map_display {
+  height: 700px;
+}
+html {
+  height: 100%;
+}
+
 
   /* set map, body, and html to 100% of the screen size */
-#map,
-body,
+/*#map,
 html {
   height: 100%;
 }
@@ -74,6 +80,6 @@ html {
   height: 750px;
 }
 h1 {
->>>>>>> 7d1667706171e29e950267639e0da79e58e477e9:Helen(xier)_Z_group_project2/css/main.css
   text-align: center;
 }
+*/
