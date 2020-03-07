@@ -40,14 +40,41 @@ d3.json("../Roaya_H_group_project2/data.json", function(x) {
 
   for ( var i = 0; i < x.length; i++) {
     var Country = x[i].Country;
-    var Cases = x[i].TotalCases;
-    var Deaths = x[i].TotalDeaths;
-    var NewCases = x[i].NewCases;
-    var NewDeaths = x[i].NewDeaths;
-    var MortRate = x[i].TotalDeaths / x[i].TotalCases;
+    var Cases = +x[i].TotalCases;
+    var Deaths = +x[i].TotalDeaths;
+    var NewCases = +x[i].NewCases;
+    var NewDeaths = +x[i].NewDeaths;
+    var MortRate = (( +x[i].TotalDeaths / +x[i].TotalCases ) * 100).toFixed(2) + '%';
     var coords = [x[i].Latitude, x[i].Longitude]
-    console.log(Country, Cases, Deaths, NewCases, NewDeaths, MortRate, coords);
-  };
+    
+      // Add circles to map
+    var radius;
+
+    if (Cases < 10) {
+      radius = 200;
+    }
+    else if (10 <= Cases && Cases < 50) {
+      radius = 500;
+    }
+    else if (50 <= Cases && Cases < 500) {
+      radius = 1000;
+    }
+    else if (500 <= Cases && Cases< 5000) {
+      radius = 2000;
+    }
+    else if (5000 <= Cases) {
+      radius = 5000;
+    }
+    console.log(Country, Cases, radius, Deaths, NewCases, NewDeaths, MortRate, coords);
+    L.circle(coords, {
+    fillOpacity: 0.75,
+    color: "white",
+    fillColor: "red",
+    // Adjust radius
+    radius: radius * 100
+    }).bindPopup("<h1>" + Country + "</h1> <hr> <h3>Total Cases: " + Cases + "</h3>").addTo(myMap);
+}
+
 });
 
 function parsethruJson(json) {
@@ -77,12 +104,4 @@ function parsethruJson(json) {
 //     color = "purple";
 //   }
 
-//   // Add circles to map
-//   L.circle(test_coords, {
-//     fillOpacity: 0.75,
-//     color: "white",
-//     fillColor: color,
-//     // Adjust radius
-//     radius: countries[i][i].Total_Cases * 10
-//   }).bindPopup("<h1>" + countries[i][i].country + "</h1> <hr> <h3>Total Cases: " + countries[i][i].Total_Cases + "</h3>").addTo(myMap);
-// }
+
