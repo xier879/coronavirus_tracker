@@ -13,54 +13,76 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(myMap);
 
 var jsonFeatures = [];
-
+var json_test = {};
 
 // main.js
 // const countries = import('./json_geomap_dummy01.json');
 // console.log(countries); // { hello: 'world' }
-function readTextFile(file, callback) {
-  var rawFile = new XMLHttpRequest();
-  rawFile.overrideMimeType("application/json");
-  rawFile.open("GET", file, true);
-  rawFile.onreadystatechange = function() {
-      if (rawFile.readyState === 4 && rawFile.status == "200") {
-          callback(rawFile.responseText);
-      }
-  }
-  rawFile.send(null);
-}
-// Country data
-readTextFile("../Roaya_H_group_project2/data.json", function(data){
-  var json_test = JSON.parse(data);
-  console.log(json_test);
+// function readTextFile(file, callback) {
+//   var rawFile = new XMLHttpRequest();
+//   rawFile.overrideMimeType("application/json");
+//   rawFile.open("GET", file, true);
+//   rawFile.onreadystatechange = function() {
+//       if (rawFile.readyState === 4 && rawFile.status == "200") {
+//           callback(rawFile.responseText);
+//       }
+//   }
+//   rawFile.send(null);
+// }
+// // Country data
+// readTextFile(, function(data){
+//   json_test = JSON.parse(data);
+//   console.log(json_test);
+// });
+
+d3.json("../Roaya_H_group_project2/data.json", function(x) {
+  console.log(x);
+
+  for ( var i = 0; i < x.length; i++) {
+    var Country = x[i].Country;
+    var Cases = x[i].TotalCases;
+    var Deaths = x[i].TotalDeaths;
+    var NewCases = x[i].NewCases;
+    var NewDeaths = x[i].NewDeaths;
+    var MortRate = x[i].TotalDeaths / x[i].TotalCases;
+    var coords = [x[i].Latitude, x[i].Longitude]
+    console.log(Country, Cases, Deaths, NewCases, NewDeaths, MortRate, coords);
+  };
 });
 
+function parsethruJson(json) {
+  for (var k in json) (x => {
+  console.log(x[TotalCases])
+  });
+};
 
-// Loop through the cities array and create one marker for each city object
-for (var i = 0; i < countries.length; i++) {
+// parsethruJson(json_test);
 
-  var test_coords = [Number(countries[i][i].Latitude), Number(countries[i][i].Longitude)]
-  // Conditionals for countries points
-  var color = "";
-  if (9999 > countries[i][i].Total_Cases > 2000) {
-    color = "red";
-  }
-  else if (countries[i][i].Total_Cases > 10000) {
-    color = "black";
-  }
-  else if (countries[i][i].Total_Cases > 90) {
-    color = "green";
-  }
-  else {
-    color = "purple";
-  }
+// // Loop through the cities array and create one marker for each city object
+// for (var i = 0; i < countries.length; i++) {
 
-  // Add circles to map
-  L.circle(test_coords, {
-    fillOpacity: 0.75,
-    color: "white",
-    fillColor: color,
-    // Adjust radius
-    radius: countries[i][i].Total_Cases * 10
-  }).bindPopup("<h1>" + countries[i][i].country + "</h1> <hr> <h3>Total Cases: " + countries[i][i].Total_Cases + "</h3>").addTo(myMap);
-}
+//   var test_coords = [Number(countries[i][i].Latitude), Number(countries[i][i].Longitude)]
+//   // Conditionals for countries points
+//   var color = "";
+//   if (9999 > countries[i][i].Total_Cases > 2000) {
+//     color = "red";
+//   }
+//   else if (countries[i][i].Total_Cases > 10000) {
+//     color = "black";
+//   }
+//   else if (countries[i][i].Total_Cases > 90) {
+//     color = "green";
+//   }
+//   else {
+//     color = "purple";
+//   }
+
+//   // Add circles to map
+//   L.circle(test_coords, {
+//     fillOpacity: 0.75,
+//     color: "white",
+//     fillColor: color,
+//     // Adjust radius
+//     radius: countries[i][i].Total_Cases * 10
+//   }).bindPopup("<h1>" + countries[i][i].country + "</h1> <hr> <h3>Total Cases: " + countries[i][i].Total_Cases + "</h3>").addTo(myMap);
+// }
