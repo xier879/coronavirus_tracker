@@ -8,7 +8,14 @@
         <meta name="keywords" content="" />
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/main.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="css/main.css" rel="stylesheet"/>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+        integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+        integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+        crossorigin=""></script>
     </head>
     <body class="page-top">
         <header id="header">
@@ -49,7 +56,7 @@
                 <div class="col-lg-8 col-md-12">
                     <h1>Coronavirus Tracker Project</h1>
                     <!--this is JUST an example, feel free to edit it -->
-                    <h4>Presented by Minchan Choi, Roaya Helal,Nathon Mace, Xier Zhao</h4>
+                    <h4>Presented by Minchan Choi, Roaya Helal, Nathan Mace, Xier Zhao</h4>
                     <!-- a text message that you would like to show on the top of the page-->
                     <!--for example: a general conclusion about our project-->
                     <br>
@@ -60,19 +67,19 @@
                 </div>
             </div>
         </div>
-        <!--The following part is pretty vogue since I don't know what we would like to include in the page -->
+        <!--The following part is pretty vague since I don't know what we would like to include in the page -->
         <div class="description">
             <div class="inner">
                 <div class="col-lg-4 col-md-12">
                     <h2>Analysis</h2>
                     <p>Something to conclude</p>
                 </div>
-            </div>
-            <div class="map_display">
-                <div class="content">
-                    <h3>MAP</h3>
-                </div>
             </div>          
+        </div>
+        <div class="map_display">
+            <div id="map">
+                <!-- <h3>MAP</h3> -->
+            </div>
         </div>
         <footer>
             <div class="copyright">
@@ -82,5 +89,9 @@
         </footer>
         <!--scripts-->
         <script src="#"></script>
+        <!-- API key -->
+        <script type="text/javascript" src="../Nathan_Mace/config.js"></script>
+        <!-- Our JS -->
+        <script type="text/javascript" src="../Nathan_Mace/logic.js"></script>
     </body>
 </html>
