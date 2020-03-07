@@ -1,10 +1,65 @@
 body {
-    margin: 0;
-    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #858796;
-    text-align: left;
     background-color: #fff;
   }
+#header{
+  font-family: 'Times New Roman', Times, serif;
+  padding-top: 0px;
+  padding-bottom: 15px;
+  color:grey;
+  font-style: italic;
+}
+
+.navbar-brand{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 800;
+  font-size: x-large;
+  background-color: rgba(255, 255, 255, 0.808);
+  padding: 10px;
+  width: 100px;
+  height: 50px;
+  border-radius: 15px;
+}
+
+.navbar{
+  border-style: inset;
+  border-width: 5px;
+}
+
+.top-content{
+  font-family: 'Times New Roman', Times, serif;
+  width: 98%;
+  height:100%;
+  margin: 10px;
+  border: 3px dashed black;
+  padding: 25px;
+}
+.main-content{
+  font-family: 'Times New Roman', Times, serif;
+  width: 98%;
+  height:100%;
+  margin: 5px;
+  border: 3px dashed rgb(233, 22, 22);
+  padding: 25px;
+}
+
+.description{
+  font-family: 'Times New Roman', Times, serif;
+  padding-left: 20px;
+
+
+}
+.footer {
+  font-family: 'Times New Roman', Times, serif;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  border-top-style: solid; 
+  border-top-width: 4px; 
+  border-top-color: teal;
+  background-color: rgba(20, 20, 20, 0.301);
+  padding-top: 5px;
+  color: white;
+  text-align: center;
+}
