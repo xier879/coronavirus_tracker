@@ -8,3 +8,16 @@ body {
     text-align: left;
     background-color: #fff;
   }
+
+  /* set map, body, and html to 100% of the screen size */
+#map,
+body,
+html {
+  height: 100%;
+}
+.map_display {
+  height: 750px;
+}
+h1 {
+  text-align: center;
+}
