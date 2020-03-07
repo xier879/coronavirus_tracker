@@ -18,59 +18,22 @@ var jsonFeatures = [];
 // main.js
 // const countries = import('./json_geomap_dummy01.json');
 // console.log(countries); // { hello: 'world' }
-
-// Country data
-var countries = [{
-    "0": {
-        "id": "0",
-        "country": "China",
-        "Total_Cases": 80282,
-        "New Cases": "131.0",
-        "Total Deaths": "2,981",
-        "New Deaths": "38.0",
-        "Active Cases": "27,298",
-        "Total Recovered ": "50,003",
-        "Serious, Critical": "6,416",
-        "location": [36.5617654559, 103.81907349],
-        "name_long": "China",
-        "abbrev": "China",
-        "Longitude": "103.81907349",
-        "Latitude": "36.56176546"
-    },
-    "1": {
-        "id": "1",
-        "country": "Italy",
-        "Total_Cases": 3089,
-        "New Cases": "587.0",
-        "Total Deaths": "107",
-        "New Deaths": "28.0",
-        "Active Cases": "2,706",
-        "Total Recovered ": "276",
-        "Serious, Critical": "295",
-        "location": [42.796626414,12.0700133907],
-        "name_long": "Italy",
-        "abbrev": "Italy",
-        "Longitude": "12.07001339",
-        "Latitude": "42.79662641"
-    },
-    "2": {
-        "id": "2",
-        "country": "Iran",
-        "Total_Cases": 2922,
-        "New Cases": "586.0",
-        "Total Deaths": "92",
-        "New Deaths": "15.0",
-        "Active Cases": "2,278",
-        "Total Recovered ": "552",
-        "Serious, Critical": "0",
-        "location": [32.575032915, 54.2740700448],
-        "name_long": "Iran",
-        "abbrev": "Iran",
-        "Longitude": "54.27407004",
-        "Latitude": "32.57503292"
-    }
+function readTextFile(file, callback) {
+  var rawFile = new XMLHttpRequest();
+  rawFile.overrideMimeType("application/json");
+  rawFile.open("GET", file, true);
+  rawFile.onreadystatechange = function() {
+      if (rawFile.readyState === 4 && rawFile.status == "200") {
+          callback(rawFile.responseText);
+      }
+  }
+  rawFile.send(null);
 }
-];
+// Country data
+readTextFile("../Roaya_H_group_project2/data.json", function(data){
+  var json_test = JSON.parse(data);
+  console.log(json_test);
+});
 
 
 // Loop through the cities array and create one marker for each city object
