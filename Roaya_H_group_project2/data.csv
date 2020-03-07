@@ -1,4 +1,4 @@
-,"Country,Other",TotalCases,NewCases,TotalDeaths,NewDeaths,ActiveCases,TotalRecovered,"Serious,Critical",Longitude,Latitude
+,Country,TotalCases,NewCases,TotalDeaths,NewDeaths,ActiveCases,TotalRecovered,CriticalCases,Longitude,Latitude
 0,China,80652,+100,3070.0,28.0,22061,55521.0,5489.0,103.8190735,36.56176546
 1,Iran,5823,"+1,076",145.0,21.0,4009,1669.0,0.0,54.27407004,32.57503292
 2,Italy,4636,0,197.0,0.0,3916,523.0,462.0,12.07001339,42.79662641
