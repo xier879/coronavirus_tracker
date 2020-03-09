@@ -72,7 +72,7 @@ d3.json("../Roaya_H_group_project2/data.json", function(x) {
     fillColor: "red",
     // Adjust radius
     radius: radius * 100
-    }).bindPopup("<h1>" + Country + "</h1> <hr> <h3>Total Cases: " + Cases + "</h3>").addTo(myMap);
+    }).bindPopup("<h1>" + Country + "</h1> <hr> <h3>Total Cases: " + Cases + "</h3> ").addTo(myMap);
 }
 
 });

@@ -72,14 +72,13 @@ html {
 
 
   /* set map, body, and html to 100% of the screen size */
-/*#map,
-html {
+#map {
   height: 100%;
 }
-.map_display {
+/* .map_display {
   height: 750px;
 }
 h1 {
   text-align: center;
 }
-*/
+*/ */
