@@ -35,7 +35,7 @@ var json_test = {};
 //   console.log(json_test);
 // });
 
-d3.json("../Roaya_H_group_project2/data.json", function(x) {
+d3.json("data.json", function(x) {
   console.log(x);
 
   for ( var i = 0; i < x.length; i++) {
