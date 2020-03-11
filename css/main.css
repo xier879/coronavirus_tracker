@@ -34,7 +34,7 @@ body {
   border: 3px dashed black;
   padding: 25px;
 }
-.main-content{
+.map-content{
   font-family: 'Times New Roman', Times, serif;
   width: 30%;
   height:100%;
@@ -43,18 +43,42 @@ body {
   border-radius: 10px;
   padding: 7px;
 }
+#map-intro{
+  font-size: small;
+  color:grey ;
+}
+
+.project-intro{
+  position: relative;
+  width: 1200px;
+  height:250px;
+  margin: 20px;
+  border: 3px;
+  padding: 20px;
+  background-color: rgb(214, 214, 214);
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
+  font-style: oblique;
+  font-size: large;
+  border-style: inset;
+}
+
 
 .description{
   font-family: 'Times New Roman', Times, serif;
   padding-left: 20px;
-
-
 }
-.freeSpace {
-  padding: 100px;
+
+.plotly-chart{
+  width: 60%;
+  height:100%;
+  margin: 6px;
+  border: 3px dashed rgb(80, 79, 79);
+  padding: 25px;
 }
+
 .footer {
-  position: fixed;
+  position: static;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -85,4 +109,4 @@ html {
 h1 {
   text-align: center;
 }
-*/ */
+*/

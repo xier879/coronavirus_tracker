@@ -41,12 +41,12 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="index.html">Home</a>
-                    <a class="dropdown-item" href="#">SOMETHING</a>
+                    <a class="dropdown-item" href="index.html">Plotly Chart</a>
+                    <a class="dropdown-item" href="#">Geomap</a>
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Resources</a>
+                  <a class="nav-link" href="#">Data</a>
                 </li>
               </ul>
             </div>
@@ -59,16 +59,22 @@
             <!--https://www.w3schools.com/html/html_images_background.asp-->
             <!--An example image, feel free to add image you like, maybe a screenshot of the map-->
 
-            <div class="inner" style="background-image: url('img_girl.jpg');">
+            <div class="inner">
                 <div class="col-lg-8 col-md-12">
                     <h1>Coronavirus Tracker Project</h1>
                     <!--this is JUST an example, feel free to edit it -->
                     <h4>Presented by Minchan Choi, Roaya Helal, Nathan Mace, Xier Zhao</h4>
                     <!-- a text message that you would like to show on the top of the page-->
                     <!--for example: a general conclusion about our project-->
+                    <hr>
                     <br>
-                    <br>
-                    <p>A general conclusion about our project</p>
+                    <div class="row intro">
+                        <div class="col-md-12 project-intro">
+                            <p>Our project focus on collecting and visuliazing data related to Coronavirus cases including the death rates on a worldwide scale over periods. Since the first case has been identified in Wuhan, China, Coronavirus has been furiously spreading to the whole world only in a couple of months. </p>
+                            <p> Human beings still have little knowledge about what cause, how treat to the novel coronavirus at this stage.After the first known U.S. coronavarius case on Jan. 21, America cases hit to over 1000 cases. (Updated on March 11th,2020).</p>
+                            <p>We would like to show the public audience that where and how severe has been hit hard by the virus</p>
+                        </div>
+                    </div>
                     <br>
                     <br>
                 </div>
@@ -77,12 +83,17 @@
         <!--The following part is pretty vague since I don't know what we would like to include in the page -->
         <div class="description">
             <div class="row">
-                <div class="col-xs-10 col-sm-4 col-lg-2 main-content">
-                    <h5>INTRO OF THE MAP</h5>
-                    <p>Something to conclude</p>
+                <div class="col-xs-10 col-sm-4 col-lg-2 map-content">
+                    <h5>Coronavius MAP</h5>
+                    <ul id="map-intro">
+                        <li>The maps show the known locations of the total reported cases across U.S. Circles are sized by the number of total cases per state. </li>
+                        <br>
+                        <li>Source:Worldometer</li>
+                    </ul>
+                    
                 </div>
 
-                <div class="col-xs-10 col-sm-7 col-lg-9 main-content">
+                <div class="col-xs-10 col-sm-7 col-lg-9 map-content">
                     <!--an example place to display geomap-->
                     <div class="map_display">
                         <div id="map">
@@ -93,13 +104,18 @@
             </div>
             </div>          
         </div>
-        <div>
-            <div class="freeSpace">
-                <div class="story" data-point="37.000,-120.652">First story. Click to zoom</div>
-                <div class="story" data-point="35.232,-118.334">Another story. Click to zoom</div>
-                <div class="story" data-point="35.232,-118.334">Another story. Click to zoom</div>
+        <div class="row">
+            <div class="col-lg-6 plotly">
+                <div class="plotly-chart"></div>
+            </div>
+            <div class="col-lg-6 plotly">
+                <div class="plotly-chart"></div>
             </div>
         </div>
+        <br>
+        <br>
+        <br>
+
         <footer>
             <div class="footer">
                 <!--something we want to say for copyrights-->
