@@ -42,7 +42,7 @@ body {
   border: 3px dashed rgb(233, 22, 22);
   padding: 25px;
 }
-#map-intro{
+.source-note{
   font-size: small;
   color:grey ;
 }
@@ -67,7 +67,6 @@ body {
   font-family: 'Times New Roman', Times, serif;
   padding-left: 20px;
 }
-
 .plotly-chart{
   width: 60%;
   height:100%;
@@ -75,9 +74,6 @@ body {
   border: 3px dashed rgb(80, 79, 79);
   padding: 25px;
 }
-
-
-
 .footer {
   position: static;
   left: 0;
