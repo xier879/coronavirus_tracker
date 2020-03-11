@@ -34,7 +34,7 @@ body {
   border: 3px dashed black;
   padding: 25px;
 }
-.main-content{
+.map-content{
   font-family: 'Times New Roman', Times, serif;
   width: 98%;
   height:100%;
@@ -42,6 +42,26 @@ body {
   border: 3px dashed rgb(233, 22, 22);
   padding: 25px;
 }
+#map-intro{
+  font-size: small;
+  color:grey ;
+}
+
+.project-intro{
+  position: relative;
+  width: 1200px;
+  height:250px;
+  margin: 20px;
+  border: 3px;
+  padding: 20px;
+  background-color: rgb(214, 214, 214);
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
+  font-style: oblique;
+  font-size: large;
+  border-style: inset;
+}
+
 
 .description{
   font-family: 'Times New Roman', Times, serif;
