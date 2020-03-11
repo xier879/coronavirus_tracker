@@ -36,11 +36,12 @@ body {
 }
 .map-content{
   font-family: 'Times New Roman', Times, serif;
-  width: 98%;
+  width: 30%;
   height:100%;
   margin: 5px;
-  border: 3px dashed rgb(233, 22, 22);
-  padding: 25px;
+  border: 2.5px dashed rgb(233, 22, 22);
+  border-radius: 10px;
+  padding: 7px;
 }
 .source-note{
   font-size: small;
@@ -74,6 +75,7 @@ body {
   border: 3px dashed rgb(80, 79, 79);
   padding: 25px;
 }
+
 .footer {
   position: static;
   left: 0;
@@ -89,7 +91,7 @@ body {
   text-align: center;
 }
 .map_display {
-  height: 700px;
+  height: 600px;
 }
 html {
   height: 100%;

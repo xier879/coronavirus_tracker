@@ -1,14 +1,14 @@
 // Create a map object
 var myMap = L.map("map", {
-  center: [15.5994, -28.6731],
-  zoom: 3,
+  center: [30, 0],
+  zoom: 2,
 
 });
 
 L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
   attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
   maxZoom: 18,
-  id: "mapbox.light",
+  id: "mapbox.dark",
   accessToken: API_KEY
 }).addTo(myMap);
 
@@ -35,7 +35,7 @@ var json_test = {};
 //   console.log(json_test);
 // });
 
-d3.json("data.json", function(x) {
+d3.json("data.json", function init(x) {
   console.log(x);
 
   for ( var i = 0; i < x.length; i++) {
@@ -51,28 +51,29 @@ d3.json("data.json", function(x) {
     var radius;
 
     if (Cases < 10) {
-      radius = 200;
-    }
-    else if (10 <= Cases && Cases < 50) {
       radius = 500;
     }
+    else if (10 <= Cases && Cases < 50) {
+      radius = 700;
+    }
     else if (50 <= Cases && Cases < 500) {
-      radius = 1000;
+      radius = 1500;
     }
     else if (500 <= Cases && Cases< 5000) {
-      radius = 2000;
+      radius = 2500;
     }
     else if (5000 <= Cases) {
-      radius = 5000;
+      radius = 3500;
     }
     console.log(Country, Cases, radius, Deaths, NewCases, NewDeaths, MortRate, coords);
     L.circle(coords, {
-    fillOpacity: 0.75,
+    Opacity: 0.40,
+    fillOpacity: 0.40,
     color: "white",
     fillColor: "red",
     // Adjust radius
     radius: radius * 100
-    }).bindPopup("<h1>" + Country + "</h1> <hr> <h3>Total Cases: " + Cases + "</h3> ").addTo(myMap);
+    }).bindTooltip("<h1>" + Country + "</h1> <hr> <h3>Total Cases: " + Cases + "</h3> <hr> <h3>Mortality Rate: " + MortRate+ "</h3>").addTo(myMap);
 }
 
 });
@@ -83,6 +84,9 @@ function parsethruJson(json) {
   });
 };
 
+function panToEurope() {
+  myMap.flyTo([46.2, 0], 4);
+}
 // parsethruJson(json_test);
 
 // // Loop through the cities array and create one marker for each city object
