@@ -84,9 +84,43 @@ function parsethruJson(json) {
   });
 };
 
-function panToEurope() {
-  myMap.flyTo([46.2, 0], 4);
+
+
+
+function specifyCountry() {
+  d3.json("data.json", function(x) {
+    console.log(x);
+
+    for ( var i = 0; i < x.length; i++) {
+      var Country = x[i].Country;
+      var Cases = +x[i].TotalCases;
+      var Deaths = +x[i].TotalDeaths;
+      var NewCases = +x[i].NewCases;
+      var NewDeaths = +x[i].NewDeaths;
+      var MortRate = (( +x[i].TotalDeaths / +x[i].TotalCases ) * 100).toFixed(2) + '%';
+      var coords = [x[i].Latitude, x[i].Longitude];
+
+      var insertedCountry = document.getElementById("country").value;
+
+      if (insertedCountry == Country) {
+        myMap.flyTo(coords, 5);
+        console.log(Country, Cases, Deaths, NewCases, NewCases, NewDeaths, MortRate);
+      };
+    }
+});}
+
+function returnToCenter() {
+  myMap.flyTo([30,0], 2)
 }
+
+document.getElementById("country")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("filter-btn").click();
+    }
+});
+
 // parsethruJson(json_test);
 
 // // Loop through the cities array and create one marker for each city object

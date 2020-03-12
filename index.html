@@ -9,7 +9,7 @@
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="css/main.css" rel="stylesheet"/>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
         <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
         integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
         crossorigin="">
@@ -87,6 +87,16 @@
         <!--The following part is pretty vague since I don't know what we would like to include in the page -->
         <div class="description">
             <div class="row">
+
+                <div class="col-xs-10 col-sm-4 col-lg-2 map-content">
+                    <!-- <h5>INTRO OF THE MAP</h5> -->
+                    <li class="filter list-group-item">
+                        <label for="country">Search for a Country</label>
+                        <input class="form-control" id="country" type="text" placeholder="e.g. Italy">
+                        <button id="filter-btn" type="button" onclick="specifyCountry();" class="btn btn-default"></button>
+                    </li>
+                </div>
+
                 <div class="col-xs-10 col-sm-4 col-lg-2 map-content">
                     <h5>Coronavius MAP</h5>
                     <ul class="source-note">
@@ -94,8 +104,9 @@
                         <br>
                         <li>Source:Worldometer</li>
                     </ul>
-                    
-                </div>
+               </div>  
+
+                
 
                 <div class="col-xs-10 col-sm-7 col-lg-9 map-content">
                     <!--an example place to display geomap-->
@@ -107,6 +118,11 @@
                 </div>
             </div>          
         </div>
+
+        <div>
+            <div class="freeSpace"></div>
+        </div>
+
         <div class="row plot-1">
             <div class="col-lg-12">
                 <div id ="plot"></div>
@@ -122,6 +138,8 @@
                 </div>
             </div>
         </div>
+
+          
         <br>
         <br>
         <br>
