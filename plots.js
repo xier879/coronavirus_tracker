@@ -60,7 +60,17 @@
         
         var layout = {
           title: "Total Deaths Per Country"};
-        
+          
         Plotly.newPlot("plot2", plotData, layout)});
+
+// Summary table values
+//  current expected value of mortality rate wordwide 
+var total_cases = data.map(column => column.TotalCases).reduce(function(a,b){
+  return a + b
+}, 0);
+var total_countries = data.length;
+var weighted_mortality_per_country = data.map(row=> (row.TotalDeaths/row.TotalCases)*(row.TotalCases/total_cases)).reduce(function(a,b){
+  return a + b
+}, 0);
 
       
