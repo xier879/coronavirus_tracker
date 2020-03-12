@@ -49,7 +49,7 @@ d3.json("data.json", function init(x) {
     var NewDeaths = +x[i].NewDeaths;
     var totNewDeaths = NewDeaths + totNewDeaths;
     var MortRate = (( +x[i].TotalDeaths / +x[i].TotalCases ) * 100).toFixed(2) + '%';
-    var intMortRate = (( +x[i].TotalDeaths / +x[i].TotalCases );
+    var intMortRate = (( +x[i].TotalDeaths / +x[i].TotalCases ));
     var totMortRate = intMortRate + totMortRate;
     var avgMortRate = totMortRate/(i+1);
 
