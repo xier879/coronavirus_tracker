@@ -3,15 +3,17 @@ body {
   }
 
 #header{
-  font-family: 'Times New Roman', Times, serif;
+  font-family:Arial, Helvetica, sans-serif;
   padding-top: 0px;
   padding-bottom: 15px;
   color:grey;
-  font-style: italic;
+}
+.font-style{
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .navbar-brand{
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 800;
   font-size: x-large;
   background-color: rgba(255, 255, 255, 0.808);
@@ -26,8 +28,10 @@ body {
   border-width: 5px;
 }
 
+
+
 .top-content{
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
   width: 98%;
   height:100%;
   margin: 10px;
@@ -35,7 +39,7 @@ body {
   padding: 25px;
 }
 .map-content{
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
   width: 30%;
   height:100%;
   margin: 5px;
@@ -51,14 +55,13 @@ body {
 .project-intro{
   position: relative;
   width: 1200px;
-  height:250px;
+  height:300px;
   margin: 20px;
   border: 3px;
   padding: 20px;
   background-color: rgb(214, 214, 214);
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 200;
-  font-style: oblique;
   font-size: large;
   border-style: inset;
 }
@@ -68,13 +71,7 @@ body {
   font-family: 'Times New Roman', Times, serif;
   padding-left: 20px;
 }
-.plotly-chart{
-  width: 60%;
-  height:100%;
-  margin: 6px;
-  border: 3px dashed rgb(80, 79, 79);
-  padding: 25px;
-}
+
 
 .footer {
   position: static;
@@ -109,3 +106,11 @@ h1 {
   text-align: center;
 }
 */
+/*
+.plotly-chart{
+  width: 60%;
+  height:100%;
+  margin: 6px;
+  border: 3px dashed rgb(80, 79, 79);
+  padding: 25px;
+}*/
