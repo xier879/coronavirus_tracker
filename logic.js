@@ -41,10 +41,19 @@ d3.json("data.json", function init(x) {
   for ( var i = 0; i < x.length; i++) {
     var Country = x[i].Country;
     var Cases = +x[i].TotalCases;
+    var totCases = Cases + totCases;
     var Deaths = +x[i].TotalDeaths;
+    var totDeaths = Deaths + totDeaths;
     var NewCases = +x[i].NewCases;
+    var totNewCases = NewCases + totNewCases;
     var NewDeaths = +x[i].NewDeaths;
+    var totNewDeaths = NewDeaths + totNewDeaths;
     var MortRate = (( +x[i].TotalDeaths / +x[i].TotalCases ) * 100).toFixed(2) + '%';
+    var intMortRate = (( +x[i].TotalDeaths / +x[i].TotalCases );
+    var totMortRate = intMortRate + totMortRate;
+    var avgMortRate = totMortRate/(i+1);
+
+    
     var coords = [x[i].Latitude, x[i].Longitude]
     
       // Add circles to map
