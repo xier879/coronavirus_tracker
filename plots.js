@@ -1,6 +1,20 @@
-// mortality rate per country chart      
+      
       d3.json("data.json", function(data) {
       var data = data;
+
+      // Summary table values
+        //  current expected value of mortality rate wordwide 
+        var total_cases = data.map(column => column.TotalCases).reduce(function(a,b){
+          return a + b
+        }, 0);
+        var total_countries = data.length;
+        var weighted_mortality_per_country = data.map(row=> (row.TotalDeaths/row.TotalCases)*(row.TotalCases/total_cases)).reduce(function(a,b){
+          return a + b
+        }, 0);
+        d3.select("#ExpectedMortality").text(`Current Mortality Rate:  ${weighted_mortality_per_country}`);
+        console.log(weighted_mortality_per_country);
+
+    // mortality rate per country chart
       var trace1 = {
         x: data.map(row => row.Country),
         y: data.map(row => row.TotalDeaths/row.TotalCases),
@@ -61,16 +75,13 @@
         var layout = {
           title: "Total Deaths Per Country"};
           
-        Plotly.newPlot("plot2", plotData, layout)});
+        Plotly.newPlot("plot2", plotData, layout);
 
-// Summary table values
-//  current expected value of mortality rate wordwide 
-var total_cases = data.map(column => column.TotalCases).reduce(function(a,b){
-  return a + b
-}, 0);
-var total_countries = data.length;
-var weighted_mortality_per_country = data.map(row=> (row.TotalDeaths/row.TotalCases)*(row.TotalCases/total_cases)).reduce(function(a,b){
-  return a + b
-}, 0);
+
+        
+
+        
+      });
+
 
       
