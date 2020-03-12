@@ -42,7 +42,7 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="index.html">Plotly Chart</a>
+                    <a class="dropdown-item" href="#">Plotly Chart</a>
                     <a class="dropdown-item" href="#">Geomap</a>
                   </div>
                 </li>
@@ -61,8 +61,8 @@
             <!--An example image, feel free to add image you like, maybe a screenshot of the map-->
 
             <div class="inner">
-                <div class="col-lg-8 col-md-12">
-                    <h1>Coronavirus Tracker Project</h1>
+                <div class="col-lg-8 col-md-12 font-style">
+                    <h1 calss="font-style">Coronavirus Tracker Project</h1>
                     <!--this is JUST an example, feel free to edit it -->
                     <h4>Presented by Minchan Choi, Roaya Helal, Nathan Mace, Xier Zhao</h4>
                     <!-- a text message that you would like to show on the top of the page-->
@@ -78,8 +78,7 @@
                     </div>
                     <br>
                     <p>A general conclusion about our project</p>
-                     <div id ="plot"></div>
-                    <script src="plots.js"></script>
+
                     <br>
                     <br>
                 </div>
@@ -106,15 +105,21 @@
                         </div>
                     </div> 
                 </div>
-            </div>
             </div>          
         </div>
-        <div class="row">
-            <div class="col-lg-6 plotly">
-                <div class="plotly-chart"></div>
+        <div class="row plot-1">
+            <div class="col-lg-12">
+                <div id ="plot"></div>
+                <script src="plots.js"></script>
             </div>
-            <div class="col-lg-6 plotly">
-                <div class="plotly-chart"></div>
+            <div class="col-lg-12">
+                <div id="plot-1-content">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <br>
