@@ -3,13 +3,21 @@
       var trace1 = {
         x: data.map(row => row.Country),
         y: data.map(row => row.TotalDeaths/row.TotalCases),
-        type: "bar"
+        type: "bar",
+        transforms: [{
+          type: 'sort',
+          target: 'y',
+          order: 'descending'},
+          {type: 'filter',
+          target: 'y',
+          operation: '>',
+          value: 0
+        }]
       };
       var plotData = [trace1];
       
       var layout = {
-        title: "Mortality Rate"
-      };
+        title: "Mortality Rate"};
       
       Plotly.newPlot("plot", plotData, layout)});
       
