@@ -116,10 +116,15 @@ function specifyCountry() {
         console.log(Country, Cases, Deaths, NewCases, NewCases, NewDeaths, MortRate);
       };
     }
+    var timer;
+    clearInterval(timer);
+    timer = setInterval(function() {returnToCenter()}, 10000);
+
 });}
 
 function returnToCenter() {
   myMap.flyTo([30,0], 2)
+
 }
 
 document.getElementById("country")
