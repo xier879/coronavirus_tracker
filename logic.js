@@ -174,25 +174,5 @@ document.getElementById("country")
     }
 });
 
-// parsethruJson(json_test);
-
-// // Loop through the cities array and create one marker for each city object
-// for (var i = 0; i < countries.length; i++) {
-
-//   var test_coords = [Number(countries[i][i].Latitude), Number(countries[i][i].Longitude)]
-//   // Conditionals for countries points
-//   var color = "";
-//   if (9999 > countries[i][i].Total_Cases > 2000) {
-//     color = "red";
-//   }
-//   else if (countries[i][i].Total_Cases > 10000) {
-//     color = "black";
-//   }
-//   else if (countries[i][i].Total_Cases > 90) {
-//     color = "green";
-//   }
-//   else {
-//     color = "purple";
-//   }
 
 
