@@ -11,9 +11,10 @@
           return a + b
         }, 0);
         console.log(weighted_mortality_per_country);
-        var dates = data.map(column=> (column.Date)).slice(2,3);
+        var dates = data.map(row=> (row.Date)).slice(2,3);
         var date = Date(dates);
         console.log(date);
+        console.log(`Date Updated: ${parseInt(data.map(row=> (row.Date)).slice(2,3))}`)
         d3.select("#date-time").text(date)
 
     // New cases per country chart
@@ -73,14 +74,14 @@
             {type: 'filter',
             target: 'y',
             operation: '>',
-            value: 0
+            value: 1
           }]
           
         };
         var plotData = [trace1];
         
         var layout = {
-          title: "Top 10 Total Deaths Per Country"
+          title: "Top Total Deaths Per Country"
         };
           
         Plotly.newPlot("plot2", plotData, layout);
