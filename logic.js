@@ -14,6 +14,10 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 var jsonFeatures = [];
 var json_test = {};
+var timer;
+var radius;
+var radii = [];
+var circles = [];
 
 // main.js
 // const countries = import('./json_geomap_dummy01.json');
@@ -38,6 +42,12 @@ var json_test = {};
 d3.json("data.json", function init(x) {
   console.log(x);
 
+  var totCases = 0;
+  var totDeaths = 0;
+  var totNewCases = 0;
+  var totNewDeaths = 0;
+  var totMortRate = 0;
+
   for ( var i = 0; i < x.length; i++) {
     var Country = x[i].Country;
     var Cases = +x[i].TotalCases;
@@ -53,11 +63,10 @@ d3.json("data.json", function init(x) {
     var totMortRate = intMortRate + totMortRate;
     var avgMortRate = totMortRate/(i+1);
 
-    
     var coords = [x[i].Latitude, x[i].Longitude]
     
       // Add circles to map
-    var radius;
+
 
     if (Cases < 10) {
       radius = 500;
@@ -73,7 +82,9 @@ d3.json("data.json", function init(x) {
     }
     else if (5000 <= Cases) {
       radius = 3500;
-    }
+    };
+
+    radii.push(radius);
     console.log(Country, Cases, radius, Deaths, NewCases, NewDeaths, MortRate, coords);
     L.circle(coords, {
     Opacity: 0.40,
@@ -82,9 +93,19 @@ d3.json("data.json", function init(x) {
     fillColor: "red",
     // Adjust radius
     radius: radius * 100
-    }).bindTooltip("<h1>" + Country + "</h1> <hr> <h3>Total Cases: " + Cases + "</h3> <hr> <h3>Mortality Rate: " + MortRate+ "</h3>").addTo(myMap);
-}
-
+    }).bindTooltip("<h1>" + Country + "</h1> <hr> <h3>Total Cases: " + Cases + "</h3> <hr> <h3>Mortality Rate: " + MortRate+ "</h3> <hr> <h3>Recent Cases (24h): " + NewCases+ "</h3> <hr><h3>Recent Deaths (24h): " + NewDeaths+ "</h3>").addTo(myMap);
+  };
+  var overallData = {
+    "Total COVID-19 Cases: ": totCases,
+    "Total Deaths from COVID-19: ": totDeaths,
+    "Total Confirmed Cases in 24h: ": totNewCases,
+    "Total Confirmed Deaths in 24h: ": totNewDeaths,
+    "Global Average Mortalitiy Rate: ": avgMortRate.toFixed(2) + "%"
+  };
+  console.log(overallData);
+  var data_location = d3.select("#Global_Data");
+  Object.entries(overallData).forEach(([key,value]) =>
+    data_location.append('li').text([key , value]));
 });
 
 function parsethruJson(json) {
@@ -100,6 +121,14 @@ function specifyCountry() {
   d3.json("data.json", function(x) {
     console.log(x);
 
+    // circles.push(L.circle(coords, {
+    //   Opacity: 0.40,
+    //   fillOpacity: 0.40,
+    //   color: "white",
+    //   fillColor: "red",
+    //   radius: 1
+    //   }));
+
     for ( var i = 0; i < x.length; i++) {
       var Country = x[i].Country;
       var Cases = +x[i].TotalCases;
@@ -112,14 +141,29 @@ function specifyCountry() {
       var insertedCountry = document.getElementById("country").value;
 
       if (insertedCountry == Country) {
-        myMap.flyTo(coords, 5);
-        console.log(Country, Cases, Deaths, NewCases, NewCases, NewDeaths, MortRate);
+        console.log(Country, Cases, Deaths, NewCases, NewCases, NewDeaths, MortRate, i);
+
+        // myMap.flyTo(coords, 5);
+        // L.circle(coords, {
+        //   Opacity: 0.40,
+        //   fillOpacity: 0.40,
+        //   color: "white",
+        //   fillColor: "blue",
+        //   // Adjust radius
+        //   radius: radii[i] * 100
+        // }
+        //   ).openTooltip("tooltip for marker ").addTo(myMap);
+        // circles[i].bindTooltip("Testing").addTo(myMap).openTooltip();
       };
     }
+    timer = setInterval(function() {returnToCenter()}, 10000);
+
 });}
 
 function returnToCenter() {
   myMap.flyTo([30,0], 2)
+  clearInterval(timer);
+
 }
 
 document.getElementById("country")

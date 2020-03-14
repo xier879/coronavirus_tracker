@@ -1,3 +1,4 @@
+
 ,Country,TotalCases,NewCases,TotalDeaths,NewDeaths,TotalRecovered,ActiveCases,CriticalCases,Tot Cases/1M pop,Date,Longitude,Latitude
 0,China,80817,3.0,3177.0,0.0,64152.0,13488,4020.0,56.1,2020-03-13 20:00:02.988123,103.8190735,36.56176546
 1,Italy,17660,2547.0,1266.0,250.0,1439.0,14955,1328.0,292.1,2020-03-13 20:00:02.988123,12.07001339,42.79662641
