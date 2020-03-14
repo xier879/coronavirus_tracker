@@ -110,7 +110,7 @@ d3.json("data.json", function init(x) {
   console.log(overallData);
   var data_location = d3.select("#Global_Data");
   Object.entries(overallData).forEach(([key,value]) =>
-    data_location.append('p').html(`<h3>${key}<b>${value}</b></h3>`));
+    data_location.append('p').html(`<h3>${key}<b><font color="red">${value}</font></b></h3>`));
 });
 
 function parsethruJson(json) { 
@@ -144,8 +144,9 @@ function specifyCountry() {
       var coords = [x[i].Latitude, x[i].Longitude];
 
       var insertedCountry = document.getElementById("country").value;
-
-      if (insertedCountry == Country) {
+      // try {
+          
+      if (insertedCountry == Country)  {
         console.log(Country, Cases, Deaths, NewCases, NewCases, NewDeaths, MortRate, i);
         var countryData = {
           "Country: ": Country,
@@ -161,9 +162,20 @@ function specifyCountry() {
 
         var data_location = d3.select("#Country_Data");
         Object.entries(countryData).forEach(([key,value]) =>
-          data_location.append('p').html(`<h4>${key}<b>${value}<b></h4>`));
+          data_location.append('p').html(`<h4>${key}<b><font color="red">${value}</font><b></h4>`));
         myMap.flyTo(coords, 5);
-      };
+      }
+
+      // catch(err) {
+      //   document.getElementById("$Country_Data").innerHTML = err.message;
+      // };
+      // else {
+      //   $("#Country_Data").empty();
+
+      //   var data_location = d3.select("#Country_Data");
+      //   data_location.append('p').html(`<h4>Hmm, this doesn't seem to be a country</h4>`)
+      // };
+
     }
     timer = setInterval(function() {returnToCenter()}, 10000);
 
