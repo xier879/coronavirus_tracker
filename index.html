@@ -33,7 +33,7 @@
         <!--dropdown menu if you have any subpages-->
         <!--https://getbootstrap.com/docs/4.4/components/navs/-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand font-style" id = "navbar-brand-font-color" href="index.html">Home</a>
+            <a class="navbar-brand" id = "navbar-brand-font-color" href="index.html">HOME</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -42,8 +42,8 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item font-style" href="index.html">Home</a>
-                    <a class="dropdown-item font-style" href="data_table.html">Data</a>
+                    <a class="dropdown-item" href="index.html">Home</a>
+                    <a class="dropdown-item" href="data_table.html">Data</a>
                   </div>
                 </li>
               </ul>
@@ -73,13 +73,13 @@
                 </div>
             </div>
             <div class="row intro">
-                <div class="col-md-8 project-intro">
+                <div class="col-md-4 project-intro">
                     <p>The outbreak of COVID-19 has been officially recognized as a global pandemic by the World Health Organization</p>
                     <p>With exponential growth of new cases occuring in many countries tracking the spread of this disease is an important undertaking. The first case has been identified in Wuhan,China.</p>
                     <p>All data tracking COVID-19's confirmed cases, deaths and location come from the World Health Organization, and is updated daily.</p>
                 </div>
-                <div class="col-md-3 data-summary">
-
+                <div class="col-md-6 data-summary">
+                    <h3>Aggregated Statistics</h3>
                     <br>
                     <p id = "Global_Data"></p>
                 </div>
@@ -102,6 +102,10 @@
                     </li>
 
                     <br>
+                    <div id = "Country_Data">
+                        <div id = "Country_Data_1"></div>
+                    </div>
+
                     <hr>
                     <br>
 
