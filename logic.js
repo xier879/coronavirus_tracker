@@ -101,19 +101,19 @@ d3.json("data.json", function init(x) {
     return a + b
   }, 0);
   var overallData = {
-    "Total COVID-19 Cases: ": totCases,
-    "Total Deaths from COVID-19: ": totDeaths,
-    "Total Confirmed Cases in 24h: ": totNewCases,
-    "Total Confirmed Deaths in 24h: ": totNewDeaths,
-    "Global Average Mortalitiy Rate: ": weighted_global_mortality.toFixed(4) + "%"
+    "Total COVID-19 Cases: ": totCases.toLocaleString(),
+    "Total Deaths from COVID-19: ": totDeaths.toLocaleString(),
+    "Total Confirmed Cases in 24h: ": totNewCases.toLocaleString(),
+    "Total Confirmed Deaths in 24h: ": totNewDeaths.toLocaleString(),
+    "Global Average Mortalitiy Rate: ": (weighted_global_mortality * 100).toFixed(4) + "%"
   };
   console.log(overallData);
   var data_location = d3.select("#Global_Data");
   Object.entries(overallData).forEach(([key,value]) =>
-    data_location.append('li').text(`${key}${value}`));
+    data_location.append('p').html(`<h3>${key}<b>${value}</b></h3>`));
 });
 
-function parsethruJson(json) {
+function parsethruJson(json) { 
   for (var k in json) (x => {
   console.log(x[TotalCases])
   });
@@ -147,18 +147,22 @@ function specifyCountry() {
 
       if (insertedCountry == Country) {
         console.log(Country, Cases, Deaths, NewCases, NewCases, NewDeaths, MortRate, i);
+        var countryData = {
+          "Country: ": Country,
+          "Total Cases: ": Cases.toLocaleString(),
+          "Total Deaths: ": Deaths.toLocaleString(),
+          "24h Cases: ": NewCases.toLocaleString(),
+          "24h Deaths: ": NewDeaths.toLocaleString(),
+          "Mortalitiy Rate: ": MortRate
+        };
+        console.log(countryData);
+        
+        $("#Country_Data").empty();
 
-        // myMap.flyTo(coords, 5);
-        // L.circle(coords, {
-        //   Opacity: 0.40,
-        //   fillOpacity: 0.40,
-        //   color: "white",
-        //   fillColor: "blue",
-        //   // Adjust radius
-        //   radius: radii[i] * 100
-        // }
-        //   ).openTooltip("tooltip for marker ").addTo(myMap);
-        // circles[i].bindTooltip("Testing").addTo(myMap).openTooltip();
+        var data_location = d3.select("#Country_Data");
+        Object.entries(countryData).forEach(([key,value]) =>
+          data_location.append('p').html(`<h4>${key}<b>${value}<b></h4>`));
+        myMap.flyTo(coords, 5);
       };
     }
     timer = setInterval(function() {returnToCenter()}, 10000);
@@ -179,25 +183,5 @@ document.getElementById("country")
     }
 });
 
-// parsethruJson(json_test);
-
-// // Loop through the cities array and create one marker for each city object
-// for (var i = 0; i < countries.length; i++) {
-
-//   var test_coords = [Number(countries[i][i].Latitude), Number(countries[i][i].Longitude)]
-//   // Conditionals for countries points
-//   var color = "";
-//   if (9999 > countries[i][i].Total_Cases > 2000) {
-//     color = "red";
-//   }
-//   else if (countries[i][i].Total_Cases > 10000) {
-//     color = "black";
-//   }
-//   else if (countries[i][i].Total_Cases > 90) {
-//     color = "green";
-//   }
-//   else {
-//     color = "purple";
-//   }
 
 
