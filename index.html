@@ -59,8 +59,8 @@
 
 
             <div class="row d-flex justify-content-center">
-                <div class="col-lg-8 col-md-6 font-style">
-                    <h1 calss="font-style">Coronavirus Tracker Project</h1>
+                <div class="col-lg-8 font-style">
+                    <h1 id="title-text">Coronavirus Tracker Project</h1>
                     <!--this is JUST an example, feel free to edit it -->
                     <h5>Presented by Roaya Helal, Nathan Mace, Xier Zhao</h5>
 
@@ -73,20 +73,17 @@
                 </div>
             </div>
             <div class="row intro">
-                <div class="col-md-4 project-intro">
-                    <p>The outbreak of COVID-19 has been officially recognized as a global pandemic by the World Health Organization</p>
-                    <p>With exponential growth of new cases occuring in many countries tracking the spread of this disease is an important undertaking. The first case has been identified in Wuhan,China.</p>
-                    <p>All data tracking COVID-19's confirmed cases, deaths and location come from the World Health Organization, and is updated daily.</p>
+                <div class="col-md-2 project-intro">
+                    <!-- <p>The outbreak of COVID-19 has been officially recognized as a global pandemic by the World Health Organization.</p>
+                    <p>The first case has been identified in Wuhan,China in December 2019. </p>
+                    <p>All data tracking COVID-19's confirmed cases, deaths and location come from the World Health Organization, and is updated daily.</p> -->
                 </div>
-                <div class="col-md-6 data-summary">
-                    <h3>Aggregated Data Current as of:</h3>
+                <div class="col-md-7 data-summary">
+                    <h3>Aggregated Data As Of:<h3 id="date-time"></h3></h3>
                     <br>
                     <p id = "Global_Data"></p>
                 </div>
             </div>
-            <br>
-            <br>
-            <br>
         </div>
         <hr>
         <br>
@@ -114,18 +111,13 @@
                     </div>
                 </br>
             </br>
-                    <h5>Coronavius MAP</h5>
-
-                    <ul class="source-note">
-                        <li>The maps show the known locations of the total reported cases across U.S. Circles are sized by the number of total cases per state. </li>
-                        <br>
-                        <li>Source:Worldometer</li>
-                    </ul>
+                   
                 </div>
 
                 <div class="col-xs-10 col-sm-7 col-md-9 map-content">
                     <div class="map_display">
                         <div id="map"></div>
+                        <h5 class="source-note"> Coronavius MAP The maps show the known locations of the total reported cases across U.S. Circles are sized by the number of total cases per state. Source:Worldometer</h5>
                     </div> 
                 </div>
             </div>
