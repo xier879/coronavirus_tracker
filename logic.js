@@ -110,10 +110,10 @@ d3.json("data.json", function init(x) {
   console.log(overallData);
   var data_location = d3.select("#Global_Data");
   Object.entries(overallData).forEach(([key,value]) =>
-    data_location.append('li').text(`${key}${value}`));
+    data_location.append('p').html(`<h3>${key}${value}</h3>`));
 });
 
-function parsethruJson(json) {
+function parsethruJson(json) { 
   for (var k in json) (x => {
   console.log(x[TotalCases])
   });
@@ -156,22 +156,25 @@ function specifyCountry() {
           "Mortalitiy Rate: ": MortRate
         };
         console.log(countryData);
-        d3.select("#Country_Data").selectAll("#Country_Data_1").remove();
+        // 
+        
+        // var path = document.getElementById("path");
+        // if (path != null) {
+        //   console.log("Path does not exist")
+        //   $("#path").empty(); };
+        //   // svg.selectAll("path").remove();
+        
+        $("#Country_Data").empty();
+        // var svg = d3.selectAll("#Country_Data")
+        //   .append("svg")
+        //   // .attr("width", 500)
+        //   // .attr("height", 500)
+        //   .append("g");
 
-        var data_location = d3.select("#Country_Data_1");
+        var data_location = d3.select("#Country_Data");
         Object.entries(countryData).forEach(([key,value]) =>
-          data_location.append('p').html(`<h4>${key}${value}<h4>`));
+          data_location.append('p').html(`<h4>${key}${value}</h4>`));
         myMap.flyTo(coords, 5);
-        // L.circle(coords, {
-        //   Opacity: 0.40,
-        //   fillOpacity: 0.40,
-        //   color: "white",
-        //   fillColor: "blue",
-        //   // Adjust radius
-        //   radius: radii[i] * 100
-        // }
-        //   ).openTooltip("tooltip for marker ").addTo(myMap);
-        // circles[i].bindTooltip("Testing").addTo(myMap).openTooltip();
       };
     }
     timer = setInterval(function() {returnToCenter()}, 10000);
