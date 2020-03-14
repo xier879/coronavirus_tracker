@@ -110,7 +110,7 @@ d3.json("data.json", function init(x) {
   console.log(overallData);
   var data_location = d3.select("#Global_Data");
   Object.entries(overallData).forEach(([key,value]) =>
-    data_location.append('p').html(`<h3>${key}${value}</h3>`));
+    data_location.append('p').html(`<h3>${key}<b>${value}</b></h3>`));
 });
 
 function parsethruJson(json) { 
@@ -156,24 +156,12 @@ function specifyCountry() {
           "Mortalitiy Rate: ": MortRate
         };
         console.log(countryData);
-        // 
-        
-        // var path = document.getElementById("path");
-        // if (path != null) {
-        //   console.log("Path does not exist")
-        //   $("#path").empty(); };
-        //   // svg.selectAll("path").remove();
         
         $("#Country_Data").empty();
-        // var svg = d3.selectAll("#Country_Data")
-        //   .append("svg")
-        //   // .attr("width", 500)
-        //   // .attr("height", 500)
-        //   .append("g");
 
         var data_location = d3.select("#Country_Data");
         Object.entries(countryData).forEach(([key,value]) =>
-          data_location.append('p').html(`<h4>${key}${value}</h4>`));
+          data_location.append('p').html(`<h4>${key}<b>${value}<b></h4>`));
         myMap.flyTo(coords, 5);
       };
     }
