@@ -1,4 +1,3 @@
-      
       d3.json("data.json", function(data) {
       var data = data;
 
@@ -77,11 +76,4 @@
           
         Plotly.newPlot("plot2", plotData, layout);
 
-
-        
-
-        
       });
-
-
-      
