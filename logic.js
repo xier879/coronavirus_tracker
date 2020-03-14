@@ -105,7 +105,7 @@ d3.json("data.json", function init(x) {
     "Total Deaths from COVID-19: ": totDeaths,
     "Total Confirmed Cases in 24h: ": totNewCases,
     "Total Confirmed Deaths in 24h: ": totNewDeaths,
-    "Global Average Mortalitiy Rate: ": weighted_global_mortality.toFixed(4) + "%"
+    "Global Average Mortalitiy Rate: ": (weighted_global_mortality * 100).toFixed(4) + "%"
   };
   console.log(overallData);
   var data_location = d3.select("#Global_Data");
@@ -147,8 +147,21 @@ function specifyCountry() {
 
       if (insertedCountry == Country) {
         console.log(Country, Cases, Deaths, NewCases, NewCases, NewDeaths, MortRate, i);
+        var countryData = {
+          "Country: ": Country,
+          "Total Cases: ": Cases,
+          "Total Deaths: ": Deaths,
+          "24h Cases: ": NewCases,
+          "24h Deaths: ": NewDeaths,
+          "Mortalitiy Rate: ": MortRate
+        };
+        console.log(countryData);
+        d3.select("#Country_Data").selectAll("#Country_Data_1").remove();
 
-        // myMap.flyTo(coords, 5);
+        var data_location = d3.select("#Country_Data_1");
+        Object.entries(countryData).forEach(([key,value]) =>
+          data_location.append('p').html(`<h4>${key}${value}<h4>`));
+        myMap.flyTo(coords, 5);
         // L.circle(coords, {
         //   Opacity: 0.40,
         //   fillOpacity: 0.40,
