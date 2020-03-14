@@ -10,7 +10,7 @@
         var weighted_mortality_per_country = data.map(row=> (row.TotalDeaths/row.TotalCases)*(row.TotalCases/total_cases)).reduce(function(a,b){
           return a + b
         }, 0);
-        d3.select("#ExpectedMortality").text(`Current Mortality Rate:  ${weighted_mortality_per_country}`);
+        d3.select("#ExpectedMortality").text(`Current Weighted Average Mortality Rate:  ${weighted_mortality_per_country}`);
         console.log(weighted_mortality_per_country);
 
     // mortality rate per country chart
