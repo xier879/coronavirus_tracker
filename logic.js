@@ -95,17 +95,22 @@ d3.json("data.json", function init(x) {
     radius: radius * 100
     }).bindTooltip("<h1>" + Country + "</h1> <hr> <h3>Total Cases: " + Cases + "</h3> <hr> <h3>Mortality Rate: " + MortRate+ "</h3> <hr> <h3>Recent Cases (24h): " + NewCases+ "</h3> <hr><h3>Recent Deaths (24h): " + NewDeaths+ "</h3>").addTo(myMap);
   };
+
+  var total_countries = x.length;
+  var weighted_global_mortality = x.map(row=> (row.TotalDeaths/row.TotalCases)*(row.TotalCases/totCases)).reduce(function(a,b){
+    return a + b
+  }, 0);
   var overallData = {
     "Total COVID-19 Cases: ": totCases,
     "Total Deaths from COVID-19: ": totDeaths,
     "Total Confirmed Cases in 24h: ": totNewCases,
     "Total Confirmed Deaths in 24h: ": totNewDeaths,
-    "Global Average Mortalitiy Rate: ": avgMortRate.toFixed(2) + "%"
+    "Global Average Mortalitiy Rate: ": weighted_global_mortality.toFixed(4) + "%"
   };
   console.log(overallData);
   var data_location = d3.select("#Global_Data");
   Object.entries(overallData).forEach(([key,value]) =>
-    data_location.append('li').text([key , value]));
+    data_location.append('li').text(`${key}${value}`));
 });
 
 function parsethruJson(json) {
